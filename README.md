@@ -1,4 +1,4 @@
-Neste repositório vamos guardar os arquivos do código-fonte e do relatório do trabalho.
+Neste repositório vamos guardar os arquivos do código-fonte e do relatório do trabalho.  
 
 ```text
 MergeSort_MIPS/
@@ -6,14 +6,15 @@ MergeSort_MIPS/
 └── README.md
 ```
 
-Instruções para baixar o SPIM e rodar o código no Linux:
+Instruções para baixar o SPIM e rodar o código no Linux:  
 
-sudo apt update
-sudo apt install spim
+sudo apt update  
+sudo apt install spim  
 
-Depois de baixar o spim e abrir a pasta do arquivo, para rodar o programa:
+Depois de baixar o spim e abrir a pasta do arquivo, para rodar o programa:  
 
-spim
-run "merge_sort.s"
+spim  
+load "merge_sort.s"  
+run   
 
 Para ver mais funções digite ? 
