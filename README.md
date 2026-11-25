@@ -1,5 +1,5 @@
 Neste repositório vamos guardar os arquivos do código-fonte e do relatório do trabalho.
-'''
+'''text
 MergeSort_MIPS/
 ├── merge_sort.s
 ├── README.md
