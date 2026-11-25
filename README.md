@@ -1,10 +1,10 @@
 Neste repositório vamos guardar os arquivos do código-fonte e do relatório do trabalho.
-
+'''
 MergeSort_MIPS/
 ├── merge_sort.s
 ├── README.md
 └── 
-
+'''
 Instruções para baixar o SPIM e rodar o código no Linux:
 
 sudo apt update
