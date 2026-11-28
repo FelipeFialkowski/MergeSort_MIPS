@@ -26,17 +26,20 @@ sw $t0, 24($s0)
 
 #abrindo vetor auxiliar
 addi $sp, $sp, -28
-addi $s1, sp, 0 
+addi $s1, $sp, 0 
 #fim do vetor auxiliar
+
+#parametros do mergesort
 addi $a0, $zero, 0 # indice inicial
 addi $a1, $zero, 6 #indice fim
 
-jal mergesort: 
+jal mergesort
+j fim
 
 mergesort:
 
   #reservar espaço do recursivo
-  addi $sp, $sp, -16
+  addi $sp, $sp, -20
   #RESERVA COISAS DA CHAMADA ANTERIOR
   sw $ra, 12($sp)
   sw $fp, 8($sp)
@@ -54,15 +57,23 @@ mergesort:
   slt $t2, $t0, $t1
   beq $t2, $zero, retorno
 
-  #dividir meio
-  srl $t3, $t2, 1
+  #dividir meio (do outro jeito não funcionava, assim ta indo)
+  add $t3, $t0, $t1
+  srl $t3, $t3, 1
+  sw $t3, 16($fp)#guardando valor do meio
+
+   #COLOCAR AQUI AS CHAMADAS RECURSIVAS
   
   
-  
+#retorno da função
+retorno:
+lw $ra, 12($fp) #aq ele recupera o endereço pra voltar
+lw $t0, 8($fp) ##recupera o indice da linha 54, não em fp pq fp a gente vai usar pro sp
 
+addi $sp, $fp, 20 ##liberar espaço do -20
+addi $fp, $t0, 0 #restaurar o ultimo fp
+jr $ra #retornar
 
-
-jr $ra
 
 
 j fim
